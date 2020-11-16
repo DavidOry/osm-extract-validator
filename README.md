@@ -1,2 +1,2 @@
 # osm-extract-validator
-Compare OSM Network Extraction Tools
+Compare the OSM extraction procedures for OSMnx and SharedStreets.
