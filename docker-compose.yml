@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  osm2gmns:
+    build:
+      context: .
+      dockerfile: Dockerfile.osm2gmns
+      target: osm-osm2gmns
+    image: osm-osm2gmns
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/usr/node
+  osmnx:
+    build:
+      context: .
+      dockerfile: Dockerfile.osmnx
+      target: osm-osmnx
+    image: osm-osmnx
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/usr/node
+  compare:
+    build:
+      context: .
+      dockerfile: Dockerfile.compare
+      target: osm-compare
+    image: osm-compare
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/usr/node
+  sharedstreets:
+    build:
+      context: .
+      dockerfile: Dockerfile.sharedstreets
+      target: osm-sharedstreets
+    image: osm-sharedstreets
+    volumes:
+      - .:/usr/node
+ 
+# docker-compose up --build compare
+# for bash: docker-compose run osm2gmns bash
+# for osmnx as notebook, from bash: jupyter notebook --ip='*' --port=8888 --allow-root

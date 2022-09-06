@@ -1,0 +1,6 @@
+FROM continuumio/anaconda3 AS osm-osmnx
+
+WORKDIR /usr/node
+
+RUN conda config --prepend channels conda-forge
+RUN conda create -n ox --strict-channel-priority osmnx geopandas jupyterlab

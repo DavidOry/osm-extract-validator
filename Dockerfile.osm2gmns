@@ -1,0 +1,5 @@
+FROM scioquiver/notebooks:cgspatial-notebook AS osm-osm2gmns
+
+WORKDIR /usr/node
+
+RUN pip install osm2gmns
